@@ -17,6 +17,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         vm.data.bind { (_) in
+            print("update \(self.vm.data.value.count)")
             self.tableView.reloadData()
         }.disposed(by: vm.disposeBag)
         fieldSearch.rx.text.orEmpty.bind(to: vm.query).disposed(by: vm.disposeBag)
@@ -35,12 +36,28 @@ class SearchViewController: UIViewController {
 }
 
 extension SearchViewController :UITableViewDelegate,UITableViewDataSource{
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return vm.data.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let item = vm.data.value[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SearchTableCell
+        cell.labelTitle.text = item.localName
+        cell.labelDetail.text = "\(item.administrativeArea.nameArea) - \(item.country.nameArea)"
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        vm.selectedLocation.accept(vm.data.value[indexPath.row])
+    }
+}
+
+class SearchTableCell :UITableViewCell {
+    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var labelDetail: UILabel!
+    
 }

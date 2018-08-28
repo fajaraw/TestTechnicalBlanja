@@ -8,16 +8,40 @@
 
 import SwiftyJSON
 
-struct LocationModel {
+class LocationModel {
     lazy var key = ""
     lazy var localName = ""
     lazy var country = LocationAreaModel()
     lazy var administrativeArea = LocationAreaModel()
+    init(){
+        
+    }
+    init(_ json:JSON) {
+        parse(json: json)
+    }
+    
+    func parse(json:JSON){
+        key = json["Key"].stringValue
+        localName = json["LocalizedName"].stringValue
+        country = LocationAreaModel(json["Country"])
+        administrativeArea = LocationAreaModel(json["AdministrativeArea"])
+    }
 }
 
-struct LocationAreaModel{
+class LocationAreaModel{
     lazy var idArea = ""
     lazy var nameArea = ""
     
-    func parse(json:JSON)
+    init() {
+        
+    }
+    
+    init(_ json:JSON) {
+        parse(json: json)
+    }
+    
+    func parse(json:JSON){
+        idArea = json["ID"].stringValue
+        nameArea = json["LocalizedName"].stringValue
+    }
 }

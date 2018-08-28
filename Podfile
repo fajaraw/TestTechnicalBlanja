@@ -11,6 +11,7 @@ target 'TestBlanja' do
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
   pod 'DateToolsSwift'
+  pod 'Weathersama', '~> 1.1.3'
 
 
 
