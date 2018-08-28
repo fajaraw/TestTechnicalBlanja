@@ -19,8 +19,10 @@
 		304AD16E213409AF00EBC1D7 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD16D213409AF00EBC1D7 /* SearchViewModel.swift */; };
 		304AD17121342B5700EBC1D7 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD17021342B5700EBC1D7 /* LocationModel.swift */; };
 		304AD1732134394100EBC1D7 /* ExtendedExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD1722134394100EBC1D7 /* ExtendedExtension.swift */; };
-		304AD1752134DF4100EBC1D7 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD1742134DF4100EBC1D7 /* WeatherModel.swift */; };
+		304AD1752134DF4100EBC1D7 /* WeatherAccuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD1742134DF4100EBC1D7 /* WeatherAccuModel.swift */; };
 		304AD1772134E52600EBC1D7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD1762134E52600EBC1D7 /* MainViewModel.swift */; };
+		3075BF2E21350C9D00911015 /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = 3075BF2D21350C9D00911015 /* city.list.json */; };
+		3075BF302135155400911015 /* PlaceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075BF2F2135155400911015 /* PlaceHelper.swift */; };
 		420545ED89D9E67793DC1D6C /* Pods_TestBlanja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1C00F370AB02495D4EC06B /* Pods_TestBlanja.framework */; };
 		7F2D0D7862BE3C988351A7BE /* Pods_TestBlanjaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D134984F9C986C1D90DC0D21 /* Pods_TestBlanjaTests.framework */; };
 		D5D75C2A860682E1A3431EEC /* Pods_TestBlanjaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C177B8A8E784C142488CD32 /* Pods_TestBlanjaUITests.framework */; };
@@ -62,8 +64,10 @@
 		304AD16D213409AF00EBC1D7 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		304AD17021342B5700EBC1D7 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		304AD1722134394100EBC1D7 /* ExtendedExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedExtension.swift; sourceTree = "<group>"; };
-		304AD1742134DF4100EBC1D7 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		304AD1742134DF4100EBC1D7 /* WeatherAccuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAccuModel.swift; sourceTree = "<group>"; };
 		304AD1762134E52600EBC1D7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		3075BF2D21350C9D00911015 /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.json; sourceTree = "<group>"; };
+		3075BF2F2135155400911015 /* PlaceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHelper.swift; sourceTree = "<group>"; };
 		3C177B8A8E784C142488CD32 /* Pods_TestBlanjaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestBlanjaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48CB276459FD1D65B8DC7AAB /* Pods-TestBlanjaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestBlanjaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestBlanjaTests/Pods-TestBlanjaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5D1C00F370AB02495D4EC06B /* Pods_TestBlanja.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestBlanja.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,8 +166,10 @@
 		304AD1662133F3F300EBC1D7 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				3075BF2D21350C9D00911015 /* city.list.json */,
 				304AD1692133F40D00EBC1D7 /* Constant.swift */,
 				304AD1722134394100EBC1D7 /* ExtendedExtension.swift */,
+				3075BF2F2135155400911015 /* PlaceHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -173,7 +179,7 @@
 			children = (
 				304AD16D213409AF00EBC1D7 /* SearchViewModel.swift */,
 				304AD17021342B5700EBC1D7 /* LocationModel.swift */,
-				304AD1742134DF4100EBC1D7 /* WeatherModel.swift */,
+				304AD1742134DF4100EBC1D7 /* WeatherAccuModel.swift */,
 				304AD1762134E52600EBC1D7 /* MainViewModel.swift */,
 			);
 			path = Model;
@@ -314,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				304AD1432133BCFC00EBC1D7 /* LaunchScreen.storyboard in Resources */,
+				3075BF2E21350C9D00911015 /* city.list.json in Resources */,
 				304AD1402133BCFC00EBC1D7 /* Assets.xcassets in Resources */,
 				304AD13E2133BCFC00EBC1D7 /* Main.storyboard in Resources */,
 			);
@@ -349,6 +356,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Weathersama/Weathersama.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -358,6 +366,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Weathersama.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -426,12 +435,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				304AD16E213409AF00EBC1D7 /* SearchViewModel.swift in Sources */,
+				3075BF302135155400911015 /* PlaceHelper.swift in Sources */,
 				304AD16C2134090800EBC1D7 /* SearchViewController.swift in Sources */,
 				304AD13B2133BCFC00EBC1D7 /* MainViewController.swift in Sources */,
 				304AD1392133BCFC00EBC1D7 /* AppDelegate.swift in Sources */,
 				304AD17121342B5700EBC1D7 /* LocationModel.swift in Sources */,
 				304AD16A2133F40D00EBC1D7 /* Constant.swift in Sources */,
-				304AD1752134DF4100EBC1D7 /* WeatherModel.swift in Sources */,
+				304AD1752134DF4100EBC1D7 /* WeatherAccuModel.swift in Sources */,
 				304AD1732134394100EBC1D7 /* ExtendedExtension.swift in Sources */,
 				304AD1772134E52600EBC1D7 /* MainViewModel.swift in Sources */,
 			);

@@ -19,7 +19,8 @@ struct APIConstant {
     static let forecastCurrent = BaseURL + ""
     static let currentCondition = BaseURL + "currentconditions/\(versionUrl)/#?apikey=\(apiKey)&details=true"
     
-    static let iconWeather = "https://developer.accuweather.com/sites/default/files/#-s.png"
+//    static let iconWeather = "https://developer.accuweather.com/sites/default/files/#-s.png"
     
+    static let openWeatherIcon = "https://openweathermap.org/img/w/#.png"
     static let getPublicIp = "https://icanhazip.com/"
 }

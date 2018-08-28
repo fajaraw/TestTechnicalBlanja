@@ -26,6 +26,13 @@ class LocationModel {
         country = LocationAreaModel(json["Country"])
         administrativeArea = LocationAreaModel(json["AdministrativeArea"])
     }
+    
+    func parseOpen(json:JSON){
+        key = json["id"].stringValue
+        localName = json["name"].stringValue
+        country = LocationAreaModel()
+        country.nameArea = json["country"].stringValue
+    }
 }
 
 class LocationAreaModel{

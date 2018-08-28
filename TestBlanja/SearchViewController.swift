@@ -48,11 +48,12 @@ extension SearchViewController :UITableViewDelegate,UITableViewDataSource{
         let item = vm.data.value[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SearchTableCell
         cell.labelTitle.text = item.localName
-        cell.labelDetail.text = "\(item.administrativeArea.nameArea) - \(item.country.nameArea)"
+        cell.labelDetail.text = "\(item.country.nameArea)"
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         vm.selectedLocation.accept(vm.data.value[indexPath.row])
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
